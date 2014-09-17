@@ -1,15 +1,24 @@
 HelloPhraseRenderer:
 
-<HelloPhraseRenderer@BoxLayout>:
+
+<HelloPhraseRenderer>:
     orientation: "vertical"
+    phrase_input: phrase_box
+    phrase_output: phrase_render_box
+
     BoxLayout:
         size_hint_y: None
         height: "50dp"
 
         TextInput:
+            id: phrase_box
+
         Button:
             size_hint_x: None
             width: "75dp"
             text: "Render!"
+            on_press: root.render_phrase()
+
     Label:
+        id: phrase_render_box
         text: "Your text will be shown here!"
